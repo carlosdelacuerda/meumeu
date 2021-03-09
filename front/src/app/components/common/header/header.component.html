@@ -1,0 +1,23 @@
+<header>
+    <div class="container">
+        <a [routerLink]="['/home']" class="logo">
+            <img src="../../../../assets/images/logo-w.svg" alt="logo">
+        </a>
+        <a [routerLink]="['/register']">Entrar</a>
+        <div class="logged">
+            <a class="icon">
+                <img src="../../../../assets/images/bell.svg" alt="">
+                <span class="alert"></span>
+            </a>
+            <a class="icon">
+                <img class="icon" src="../../../../assets/images/envelope.svg" alt="">
+                <span class="alert"></span>
+            </a>
+            <a [routerLink]="['/profile']">
+                <figure class="profile">
+                    <img src="https://www.dzoom.org.es/wp-content/uploads/2020/02/portada-foto-perfil-redes-sociales-consejos-810x540.jpg" alt="profile image">
+                </figure>
+            </a>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,12 @@
+<div>
+    <h1>Publica tu viaje</h1>
+    <h5>Pais al que viajas</h5>
+    <app-countries (exportCountry)="eventCountry($event)"></app-countries>
+    <h5>Fecha del viaje</h5>
+    <input type="date" placeholder="desde" [(ngModel)]="newTrip.from">
+    <input type="date" placeholder="hasta" [(ngModel)]="newTrip.to">
+    <h5>¿Quieres agregar alguna nota?</h5>
+    <textarea [(ngModel)]="newTrip.text"></textarea>
+    <button class="button-submit" (click)="onClick()">Publicar viaje</button>
+</div>
+

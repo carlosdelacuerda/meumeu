@@ -1,0 +1,45 @@
+GET http://localhost:3000/clientes
+
+###
+GET http://localhost:3000/clientes/new
+
+###
+POST http://localhost:3000/clientes/create
+
+###
+GET http://localhost:3000/clientes/edit
+
+###
+POST http://localhost:3000/clientes/update
+
+
+###
+
+
+###
+POST http://localhost:3000/api/usuarios/registro
+Content-Type: application/json
+
+{
+    "username": "mariogiron",
+    "email": "mario@otro.com",
+    "password": "12345"
+}
+
+###
+POST http://localhost:3000/api/usuarios/login
+Content-Type: application/json
+
+{
+    "email": "mario@otro.com",
+    "password": "12345"
+}
+
+
+
+
+
+###
+
+GET http://localhost:3000/api/clientes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJjYWR1Y2EiOjE2MTUzMDAwMzUsImlhdCI6MTYxNTI5OTEzNX0.KVe9yD8Lnyt2bn5RcNe1d4iB8G9uQfhz5LORvBbpfF0

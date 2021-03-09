@@ -1,0 +1,43 @@
+@import '../../../../scss/styles.scss';
+
+.triplist {
+    li {
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid $color4;
+        padding: {
+            bottom: $size;
+            top: $size;
+        };
+        .info {
+            padding: $size;
+            padding-left: 0;
+            width: 100%;
+            display: flex;
+            figure {
+                margin: auto;
+                border-radius: 100%;
+                overflow: hidden;
+                width: $size*8;
+                height: $size*8;
+                img {
+                    height: 100%;
+                }
+            };
+            .picture {
+                display: flex;
+                flex-wrap: wrap;
+                width: 33.3333%;
+            }
+            .data {
+                width: 66.6666%;
+            }
+        }
+        p {
+            display: block;
+            width: 100%;
+            padding: $size;
+            padding-top: 0;
+        }
+    }
+}

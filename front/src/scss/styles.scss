@@ -1,0 +1,103 @@
+@import 'reset';
+@import 'styleguide';
+
+@font-face {
+  font-family: title;
+  src: url(../assets/fonts/appopaint-Regular.otf);
+}
+
+
+// reset
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+
+
+// responsive
+@mixin tablet {
+    @media (max-width: 768px) {
+      @content;
+    };
+  };
+@mixin desktop {
+    @media (max-width: 1440) {
+       @content;
+    };
+  };
+  
+
+// structure
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1440px;
+    padding-right: 8px;
+    padding-left: 8px;
+    @include desktop {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+// generic
+body{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: $fbase;
+}
+h1 {
+  font: {
+    family: title, serif;
+    size: $fbase*3;
+  };
+  color: $color2;
+  text-align: center;
+  padding: $size*2;
+}
+h2 {
+  font: {
+    family: title, serif;
+    size: $fbase*1.5;
+  };
+  color: $color2;
+  text-align: center;
+}
+h3 {
+  font: {
+    size: $fbase*1.4;
+    weight: 900;
+  }
+}
+h4 {
+  font: {
+    size: $fbase*1.3;
+    weight: 700;
+  }
+}
+h5 {
+  font: {
+    size: $fbase*1.2;
+    weight: 700;
+  }
+}
+
+//forms
+input {
+  border: 1px solid $color1;
+  padding: $size;
+}
+
+// components
+.publish-button {
+    text-align: center;
+    position: fixed;
+    z-index: 2;
+    bottom: $size*2;
+    width: calc(100% - #{$size*4});
+    left: $size*2;
+}
