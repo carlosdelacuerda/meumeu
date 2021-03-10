@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterTripsComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
+
   }
 
 }

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { trip } from '../interfaces/trip.interface';
+import { baseUrl } from './baserUrl';
+
 
 
 @Injectable({
@@ -8,17 +10,19 @@ import { trip } from '../interfaces/trip.interface';
 })
 export class TripService {
 
-  // baseUrl: string;
+  tripsUrl: string;
 
-  // constructor(private httpClient: HttpClient) {
-  //   this.baseUrl = 'http://localhost/3000/api/trips'
-  //  }
+  constructor(private httpClient: HttpClient) {
+    this.tripsUrl = `${baseUrl}/api/trips`;
+ }
 
-  //  getAll () {
-  //    return this.httpClient.get<trip[]>(this.baseUrl).toPromise;
-  //  }
 
-  //  insert(formValues) {
-  //   return this.httpClient.post(this.baseUrl, formValues).toPromise();
+ getAll(): Promise<trip[]> {
+  return this.httpClient.get<trip[]>(this.tripsUrl).toPromise();
+  }
+
+  // searchByCountry(country): Promise<trip[]> {
+  //   return this.httpClient.get<trip[]>(`${this.tripsUrl}characters?name=${country}`).toPromise();
   // }
+
 }

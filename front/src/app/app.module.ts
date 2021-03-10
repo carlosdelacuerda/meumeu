@@ -31,6 +31,7 @@ import { NotificationsComponent } from './components/comunication/notifications/
 import { Error404Component } from './components/public/error404/error404.component';
 import { FormsModule } from '@angular/forms';
 import { CountriesComponent } from './components/public/countries/countries.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -68,7 +69,8 @@ import { CountriesComponent } from './components/public/countries/countries.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

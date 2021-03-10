@@ -16,13 +16,13 @@ export class ListTripsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.tripService.getAll()
-    // .then(response => {
-    //   this.arrTrips = response;
-    // })
-    // .catch(error => {
-    //   console.log(error)
-    // })
+    this.tripService.getAll()
+    .then(response => {
+      this.arrTrips = response;
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }
 
 }

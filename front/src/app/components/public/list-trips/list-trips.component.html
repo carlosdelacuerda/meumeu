@@ -1,5 +1,5 @@
-<ul class="triplist">
-    <li>
+<ul class="list">
+    <li *ngFor="let trip of arrTrips">
         <div class="info">
             <div class="picture">
                 <figure>
@@ -7,13 +7,13 @@
                 </figure>
             </div>
             <div>
-                <h4><span>Pais: </span>Francia</h4>
-                <h5><span>Salida: </span>00/00/00</h5>
-                <h5><span>Regreso: </span>00/00/00</h5>
-                <h5><span>Viajero: </span>UserName</h5>
+                <h4><span>Pais: </span>{{ trip.country }}</h4>
+                <h5><span>Salida: </span>{{ trip.from }}</h5>
+                <h5><span>Regreso: </span>{{ trip.to }}</h5>
+                <h5><span>Viajero: </span>{{ trip.username }}</h5>
             </div>
         </div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis deleniti, dolore, amet ut, odio odit ad voluptate nulla accusantium adipisci quia.</p>
+        <p>{{ trip.notes }}</p>
     </li>
 </ul>
 <a class="button-primary" [routerLink]="['/type']" class="publish-button">Publicar un viaje o un capricho</a>
