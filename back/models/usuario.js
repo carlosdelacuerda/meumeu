@@ -1,7 +1,7 @@
 const create = ({ username, email, password }) => {
     return new Promise((resolve, reject) => {
         db.query(
-            'insert into usuarios (username, email, password, role, fecha_registro) values (?, ?, ?, ?, ?)',
+            'insert into users (username, email, password, role, fecha_registro) values (?, ?, ?, ?, ?)',
             [username, email, password, 'REGULAR', new Date()],
             (err, result) => {
                 if (err) return reject(err);
@@ -17,7 +17,7 @@ const getByEmail = (email) => {
         //db.query('QUERY', [], (err, result) => { });
 
         db.query(
-            'select * from usuarios where email = ?',
+            'select * from users where email = ?',
             [email],
             (err, rows) => {
                 if (err) return reject(err);

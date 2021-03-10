@@ -11,7 +11,7 @@ const checkToken = (req, res, next) => {
     const token = req.headers['authorization'];
     let data;
     try {
-        data = jwt.verify(token, 'abanibi aboebe');
+        data = jwt.verify(token, 'mitoken');
     } catch (error) {
         return res.json({ error: 'El token es incorrecto' });
     }

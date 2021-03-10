@@ -1,4 +1,4 @@
-const { getAll, create, deleteById, updateById } = require('../../models/cliente');
+const { getAll, create, deleteById, updateById } = require('../../models/users');
 const router = require('express').Router();
 
 // Recupera todos los clientes y devuelve JSON
@@ -8,8 +8,8 @@ router.get('/', async (req, res) => {
     console.log(req.userId);
 
     try {
-        const clientes = await getAll();
-        res.json(clientes);
+        const users = await getAll();
+        res.json(users);
     } catch (error) {
         res.json({ error: error.message });
     }
@@ -27,9 +27,9 @@ router.post('/', async (req, res) => {
 });
 
 // Borro un cliente
-router.delete('/:idCliente', async (req, res) => {
+router.delete('/:idUser', async (req, res) => {
     try {
-        const result = await deleteById(req.params.idCliente);
+        const result = await deleteById(req.params.idUser);
         res.json(result);
     } catch (error) {
         res.status(422).json({ error: error.message });

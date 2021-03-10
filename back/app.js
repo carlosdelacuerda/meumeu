@@ -13,7 +13,7 @@ require('./dbConfig')();
 
 
 const indexRouter = require('./routes/index');
-const clientesRouter = require('./routes/clientes');
+const usersRouter = require('./routes/users');
 const tripsRouter = require('./routes/trips');
 const apiRouter = require('./routes/api');
 
@@ -31,7 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/clientes', clientesRouter);
+app.use('/users', usersRouter);
 app.use('/trips', tripsRouter);
 app.use('/api', apiRouter);
 

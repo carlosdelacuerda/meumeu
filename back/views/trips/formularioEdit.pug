@@ -3,22 +3,22 @@ extends ../layout.pug
 block content 
     .row
         .col-md-6.offset-md-3.col-12
-            form(action="/clientes/update", method="POST")
+            form(action="/users/update", method="POST")
                 .form-group
                     label Nombre 
-                    input.form-control(type="text", name="nombre", value=cliente.nombre)
+                    input.form-control(type="text", name="nombre", value=user.nombre)
                 .form-group
                     label Apellidos 
-                    input.form-control(type="text", name="apellidos", value=cliente.apellidos) 
+                    input.form-control(type="text", name="apellidos", value=user.apellidos) 
                 .form-group
                     label Dirección 
-                    input.form-control(type="text", name="direccion", value=cliente.direccion) 
+                    input.form-control(type="text", name="direccion", value=user.direccion) 
                 .form-group
                     label Edad 
-                    input.form-control(type="text", name="edad", value=cliente.edad) 
+                    input.form-control(type="text", name="edad", value=user.edad) 
                 .form-group
                     label Email 
-                    input.form-control(type="text", name="email", value=cliente.email) 
+                    input.form-control(type="text", name="email", value=user.email) 
                 .form-group
                     label Sexo
                     select#selectSexo.form-control(name="sexo")
@@ -27,11 +27,11 @@ block content
                         option(value="F") femenino 
                 .form-group
                     label Cuota 
-                    input.form-control(type="text", name="cuota", value=cliente.cuota) 
-                input(type="hidden", name="id", value=cliente.id)
+                    input.form-control(type="text", name="cuota", value=user.cuota) 
+                input(type="hidden", name="id", value=user.id)
                 input.btn.btn-block.btn-info(type="submit", value="Enviar")
     script.
-        const sexo = "#{cliente.sexo}";
+        const sexo = "#{user.sexo}";
         const options = document.querySelectorAll('#selectSexo option');
         for(let option of options){
             if(option.value === sexo){
