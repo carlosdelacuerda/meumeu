@@ -8,34 +8,13 @@ const cors = require('cors');
 // Conexión Base de datos
 require('./dbConfig')();
 
-/*
-  PRUEBA DE CONEXIÓN A LA BASE DE DATOS
-*/
-// const mysql = require('mysql');
-// const connection = mysql.createConnection({
-//   host: '127.0.0.1',
-//   user: 'root',
-//   password: 'root',
-//   port: 8889, // 3306
-//   database: 'gimnasios'
-// });
 
-// connection.connect((err) => {
-//   console.log(err);
-//   console.log('Estás conectado');
-//   connection.query('SELECT * FROM clientes', (err, rows) => {
-//     console.log(rows);
-//   })
-// });
-
-/*
-  FIN PRUEBA DE CONEXIÓN A LA BASE DE DATOS
-*/
 
 
 
 const indexRouter = require('./routes/index');
 const clientesRouter = require('./routes/clientes');
+const tripsRouter = require('./routes/trips');
 const apiRouter = require('./routes/api');
 
 var app = express();
@@ -53,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/clientes', clientesRouter);
+app.use('/trips', tripsRouter);
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
