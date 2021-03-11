@@ -15,9 +15,7 @@ export class FilterTripsComponent implements OnInit {
 
   constructor(
     private tripService: TripService
-  ) {
-
-   }
+  ) { }
 
   ngOnInit(): void {
     this.tripService.getAllTrips()

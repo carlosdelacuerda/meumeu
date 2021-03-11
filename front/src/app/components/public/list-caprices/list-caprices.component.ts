@@ -9,22 +9,17 @@ import { CapricesService } from 'src/app/services/caprices.service';
 })
 export class ListCapricesComponent implements OnInit {
 
-  arrCaprices: caprice[];
+
+  @Input() arrCaprices: caprice[];
 
   constructor(
     private capriceService: CapricesService
   ) { 
-    this.arrCaprices = [];
+    
   }
 
   ngOnInit(): void {
-    this.capriceService.getAllCaprices()
-    .then(response => {
-      this.arrCaprices = response;
-    }) 
-    .catch(error => {
-      console.log(error)
-    })
+
   }
 
 }

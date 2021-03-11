@@ -31,6 +31,15 @@ const getById = (pId) => {
     });
 }
 
+const getByCountry= (pCountry) => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT * FROM trips WHERE country = ?', [pCountry], (err, rows) => {
+            if (err) return reject(err);
+            resolve(rows);
+        });
+    });
+}
+
 const updateById = ({ country, from, to, notes, fk_user }) => {
     return new Promise((resolve, reject) => {
         db.query(
@@ -53,5 +62,5 @@ const deleteById = (pId) => {
 }
 
 module.exports = {
-    getAll, create, getById, updateById, deleteById
+    getAll, create, getById, updateById, deleteById, getByCountry
 }

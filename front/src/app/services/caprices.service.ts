@@ -17,4 +17,8 @@ export class CapricesService {
   getAllCaprices(): Promise<caprice[]> {
     return this.httpClient.get<caprice[]>(this.capricesUrl).toPromise();
     }
+
+    getByCountry(country){
+      return this.httpClient.get<caprice[]>(this.capricesUrl+"/"+country).toPromise();
+    }
 }

@@ -22,13 +22,6 @@ export class ListTripsComponent implements OnInit {
    
   }
 
-  // this.tripService.getByCountry()
-  // .then(response => {
-  //   this.arrTrips = response;
-  // })
-  // .catch(error => {
-  //   console.log(error)
-  // })
 
 
 }
