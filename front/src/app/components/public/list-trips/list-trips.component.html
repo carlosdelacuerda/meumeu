@@ -10,7 +10,7 @@
                 <h4><span>Pais: </span>{{ trip.country }}</h4>
                 <h5><span>Salida: </span>{{ trip.from }}</h5>
                 <h5><span>Regreso: </span>{{ trip.to }}</h5>
-                <h5><span>Viajero: </span>UserName</h5>
+                <h5><span>Viajero: </span>{{ trip.fk_user }}</h5>
             </div>
         </div>
         <p>{{ trip.notes }}</p>

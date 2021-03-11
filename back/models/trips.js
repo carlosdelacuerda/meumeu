@@ -9,6 +9,7 @@ const getAllTrips = () => {
     });
 }
 
+
 const createTrip = ({ country, from, to, notes, fk_user }) => {
     return new Promise((resolve, reject) => {
         db.query(
