@@ -87,9 +87,10 @@ h5 {
 }
 
 //forms
-input {
+input , select {
   border: 1px solid $color1;
   padding: $size;
+  background-color: $color3;
 }
 
 // components

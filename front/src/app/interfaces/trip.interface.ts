@@ -1,8 +1,8 @@
 export interface trip {
-    id?: number;
+    id?: string;
     user?: string;
     country?: string;
     from?: Date;
     to?: Date;
-    text?: string;
+    notes?: string;
 }

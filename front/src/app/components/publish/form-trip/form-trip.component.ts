@@ -29,7 +29,8 @@ export class FormTripComponent implements OnInit {
   }
 
 
-  async onClick() {
+  onClick() {
+    console.log('test')
     // const response = await this.tripService.insert(this.newTrip);
     // this.router.navigate(['/']);
   }

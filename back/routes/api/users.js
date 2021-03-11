@@ -5,6 +5,7 @@ const router = require('express').Router();
 router.get('/', async (req, res) => {
 
     // Id de usuario inyectado por el Middleware checkToken!
+    console.log(req.userId);
 
     try {
         const users = await getAll();

@@ -14,7 +14,6 @@ export class FilterTripsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
   }
 
 

@@ -1,4 +1,3 @@
-@import 'styles.scss';
 
 .filter {
     padding: $size*2 0;
@@ -6,11 +5,12 @@
     flex-wrap: wrap;
     border-bottom: 1px solid $color4;
     h5 {
-        width: 50%;
-        text-align: right;
+        width: 100%;
+        text-align: center;
         padding-right: $size;
+        padding-bottom: $size;
     }
-    input {
-        width: 50%;
+    * {
+        width: 100%;
     }
 }

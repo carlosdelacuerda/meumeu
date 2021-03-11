@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { caprice } from '../interfaces/caprice.interface';
-import { baseUrl } from './baserUrl';
+import { baseUrl } from './baseUrl';
 
 @Injectable({
   providedIn: 'root'
