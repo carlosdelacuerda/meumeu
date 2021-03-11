@@ -7,14 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterTripsComponent implements OnInit {
 
-
+  countrySelected: string;
 
   constructor() {
-    
+
    }
 
   ngOnInit(): void {
 
   }
+
+
+  filterCountry(country) {
+   return country;
+  }
+
 
 }

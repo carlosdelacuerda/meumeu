@@ -17,12 +17,13 @@ export class TripService {
  }
 
 
- getAll(): Promise<trip[]> {
+ getAllTrips(): Promise<trip[]> {
   return this.httpClient.get<trip[]>(this.tripsUrl).toPromise();
   }
 
-  // searchByCountry(country): Promise<trip[]> {
-  //   return this.httpClient.get<trip[]>(`${this.tripsUrl}characters?name=${country}`).toPromise();
+  // getByCountry(country){
+  //   return this.httpClient.get<trip[]>(this.tripsUrl).toPromise();
   // }
+
 
 }

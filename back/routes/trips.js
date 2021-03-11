@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { getAll, create, getById, updateById, deleteById } = require('../models/trips');
+const { create, getById, updateById, deleteById, getAllTrips } = require('../models/trips');
 
-// /users
+// /trips
 router.get('/', async (req, res) => {
     // getAll()
     //     .then((rows) => {
@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     //     .catch((err) => console.log(err));
 
     try {
-        const rows = await getAll();
+        const rows = await getAllTrips();
         res.render('trips/list', {
             arrUsers: rows
         });
@@ -19,33 +19,33 @@ router.get('/', async (req, res) => {
     }
 });
 
-// /users/new
+// /trips/new
 router.get('/new', (req, res) => {
-    // Renderizar una vista (formulario.pug) que reprensente cada uno de los campos necesarios para crear un user
+    // Renderizar una vista (formulario.pug) que reprensente cada uno de los campos necesarios para crear un trip
     res.render('trips/form');
 });
 
-// /users/create
+// /trips/create
 router.post('/create', async (req, res) => {
     console.log(req.body);
     const result = await create(req.body);
     console.log(result);
-    res.redirect('/users');
+    res.redirect('/trips');
 });
 
-// /users/edit/7
-router.get('/edit/:idUser', async (req, res) => {
+// /trips/edit/
+router.get('/edit/:idTrip', async (req, res) => {
     const user = await getById(req.params.idUser);
     res.render('users/formularioEdit', { user });
 });
 
-// /users/update
+// /trips/update
 router.post('/update', async (req, res) => {
     const result = await updateById(req.body);
     res.redirect('/users');
 });
 
-router.get('/delete/:idUser', async (req, res) => {
+router.get('/delete/:idTrip', async (req, res) => {
     await deleteById(req.params.idUser);
     res.redirect('/users');
 });

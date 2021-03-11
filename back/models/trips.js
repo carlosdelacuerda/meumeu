@@ -1,4 +1,4 @@
-const getAll = () => {
+const getAllTrips = () => {
     return new Promise((resolve, reject) => {
         db.query('SELECT * FROM trips', (err, rows) => {
             if (err) {
@@ -9,7 +9,7 @@ const getAll = () => {
     });
 }
 
-const create = ({ country, from, to, notes, fk_user }) => {
+const createTrip = ({ country, from, to, notes, fk_user }) => {
     return new Promise((resolve, reject) => {
         db.query(
             'INSERT INTO trips (country, from, to, notes, fk_user) values (?, ?, ?, ?, ?)',
@@ -21,17 +21,27 @@ const create = ({ country, from, to, notes, fk_user }) => {
     });
 }
 
-const getById = (pId) => {
+const getByTripId = (pId) => {
     return new Promise((resolve, reject) => {
         db.query('SELECT * FROM trips WHERE id = ?', [pId], (err, rows) => {
-            if (err) return reject(err); // Excepción ERROR
-            if (rows.length === 0) return resolve(null); // No se encuentra
+            if (err) return reject(err); 
+            if (rows.length === 0) return resolve(null);
             resolve(rows[0]);
         });
     });
 }
 
-const updateById = ({ country, from, to, notes, fk_user }) => {
+const getTripByCountry = (pCountry) => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT * FROM trips WHERE country = ?', [pCountry], (err, rows) => {
+            if (err) return reject(err);
+            if (rows.length === 0) return resolve(null);
+            resolve(rows[0]);
+        });
+    });
+}
+
+const updateByTripId = ({ country, from, to, notes, fk_user }) => {
     return new Promise((resolve, reject) => {
         db.query(
             'update trips set country = ?, from = ?, to = ?, notes = ?, edad = ?, fk_id=? where id = ?',
@@ -43,7 +53,7 @@ const updateById = ({ country, from, to, notes, fk_user }) => {
     });
 }
 
-const deleteById = (pId) => {
+const deleteByTripId = (pId) => {
     return new Promise((resolve, reject) => {
         db.query('delete from trips where id = ?', [pId], (err, result) => {
             if (err) return reject(err);
@@ -53,5 +63,5 @@ const deleteById = (pId) => {
 }
 
 module.exports = {
-    getAll, create, getById, updateById, deleteById
+    getAllTrips, createTrip, getByTripId, updateByTripId, deleteByTripId, getTripByCountry
 }

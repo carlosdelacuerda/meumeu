@@ -8,6 +8,7 @@ import { baseUrl } from './baserUrl';
 })
 export class UsersService {
 
+  userTrip: string;
   usersUrl: string;
 
   constructor(private httpClient: HttpClient) {
@@ -15,7 +16,11 @@ export class UsersService {
  }
 
 
- getAllusers(): Promise<user[]> {
+ getAllUsers(): Promise<user[]> {
   return this.httpClient.get<user[]>(this.usersUrl).toPromise();
-  }
+  };
+
 }
+
+
+

@@ -10,7 +10,7 @@ export class CountriesComponent implements OnInit {
 
   country: string;
 
-  @Output() exportCountry= new EventEmitter<string>();
+  @Output() exportCountry = new EventEmitter<string>();
 
 
   constructor() { 
@@ -25,4 +25,6 @@ export class CountriesComponent implements OnInit {
     this.exportCountry.emit(this.country);
   };
 
+
+  
 }

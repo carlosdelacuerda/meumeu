@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { trip } from 'src/app/interfaces/trip.interface';
 import { TripService } from 'src/app/services/trip.service';
 
@@ -11,12 +11,17 @@ export class ListTripsComponent implements OnInit {
 
   arrTrips: trip[];
 
-  constructor(private tripService: TripService) { 
+
+  @Input () countrySelected: string;
+
+  constructor(
+    private tripService: TripService,
+    ) { 
     this.arrTrips = [];
   }
 
   ngOnInit(): void {
-    this.tripService.getAll()
+    this.tripService.getAllTrips()
     .then(response => {
       this.arrTrips = response;
     })
@@ -24,5 +29,14 @@ export class ListTripsComponent implements OnInit {
       console.log(error)
     })
   }
+
+  // this.tripService.getByCountry()
+  // .then(response => {
+  //   this.arrTrips = response;
+  // })
+  // .catch(error => {
+  //   console.log(error)
+  // })
+
 
 }
