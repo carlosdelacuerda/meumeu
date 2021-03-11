@@ -1,4 +1,4 @@
-const getAllCaprices = () => {
+const getAll = () => {
     return new Promise((resolve, reject) => {
         db.query('SELECT * FROM desires', (err, rows) => {
             if (err) {
@@ -53,5 +53,5 @@ const deleteById = (pId) => {
 }
 
 module.exports = {
-    getAllCaprices, create, getById, updateById, deleteById
+    getAll, create, getById, updateById, deleteById
 }

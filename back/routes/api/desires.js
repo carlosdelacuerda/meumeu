@@ -1,4 +1,4 @@
-const { getAllCaprices, create, deleteById, updateById } = require('../../models/desires');
+const { getAll, create, deleteById, updateById } = require('../../models/desires');
 const router = require('express').Router();
 
 // Recupera todos los deseos y devuelve JSON
@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
 
 
     try {
-        const desires = await getAllCaprices();
+        const desires = await getAll();
         res.json(desires);
     } catch (error) {
         res.json({ error: error.message });
