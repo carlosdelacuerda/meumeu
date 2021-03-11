@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { trip } from 'src/app/interfaces/trip.interface';
+import { TripService } from 'src/app/services/trip.service';
 
 @Component({
   selector: 'app-filter-trips',
@@ -9,16 +11,33 @@ export class FilterTripsComponent implements OnInit {
 
   countrySelected: string;
 
-  constructor() {
+  arrTrips: trip[];
+
+  constructor(
+    private tripService: TripService
+  ) {
 
    }
 
   ngOnInit(): void {
+    this.tripService.getAllTrips()
+    .then(response => {
+      this.arrTrips = response;
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }
 
 
   filterCountry(country) {
-   return country;
+    this.tripService.getByCountry(country)
+    .then(response => {
+      this.arrTrips = response;
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }
 
 

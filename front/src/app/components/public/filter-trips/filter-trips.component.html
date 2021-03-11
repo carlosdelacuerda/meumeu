@@ -3,4 +3,4 @@
     <h5>Filtrar por pais</h5>
     <app-countries (exportCountry)="filterCountry($event)"></app-countries>
 </div>
-<app-list-trips></app-list-trips>
+<app-list-trips [arrTrips]="arrTrips"></app-list-trips>

@@ -1,4 +1,4 @@
-const { getAllTrips, createTrip, deleteByTripId, updateByTripId, getTripByCountry } = require('../../models/trips');
+const { getAllTrips, createTrip, deleteByTripId, updateByTripId, getByCountry } = require('../../models/trips');
 const router = require('express').Router();
 
 // Recupera todos los viajes y devuelve JSON
@@ -13,10 +13,11 @@ router.get('/', async (req, res) => {
 });
 
 // viajes por pais
-router.get('/', async (req, res) => {
+// api/trips/country
+router.get('/:country', async (req, res) => {
 
     try {
-        const tripsByCountry = await getTripByCountry(country);
+        const tripsByCountry = await getByCountry(req.params.country);
         res.json(tripsByCountry);
     } catch (error) {
         res.json({ error: error.message });

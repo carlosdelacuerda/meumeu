@@ -19,6 +19,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/', async (req, res) => {
+    try {
+        const rows = await getByCountry();
+        res.render('trips/list', {
+            arrUsers: rows
+        });
+    } catch (err) {
+        console.log(err);
+    }
+});
+
 // /trips/new
 router.get('/new', (req, res) => {
     // Renderizar una vista (formulario.pug) que reprensente cada uno de los campos necesarios para crear un trip

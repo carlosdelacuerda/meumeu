@@ -19,9 +19,9 @@ export class TripService {
   return this.httpClient.get<trip[]>(this.tripsUrl).toPromise();
   }
 
-  // getByCountry(country){
-  //   return this.httpClient.get<trip[]>(this.tripsUrl).toPromise();
-  // }
+  getByCountry(country){
+    return this.httpClient.get<trip[]>(this.tripsUrl+"/"+country).toPromise();
+  }
 
 
 }

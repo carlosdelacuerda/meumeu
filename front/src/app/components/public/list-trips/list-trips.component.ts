@@ -9,10 +9,8 @@ import { TripService } from 'src/app/services/trip.service';
 })
 export class ListTripsComponent implements OnInit {
 
-  arrTrips: trip[];
+  @Input() arrTrips: trip[];
 
-
-  @Input () countrySelected: string;
 
   constructor(
     private tripService: TripService,
@@ -21,13 +19,7 @@ export class ListTripsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.tripService.getAllTrips()
-    .then(response => {
-      this.arrTrips = response;
-    })
-    .catch(error => {
-      console.log(error)
-    })
+   
   }
 
   // this.tripService.getByCountry()

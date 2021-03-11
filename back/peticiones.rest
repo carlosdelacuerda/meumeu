@@ -1,45 +1,45 @@
-GET http://localhost:3000/users
+# GET http://localhost:3000/users
 
-###
-GET http://localhost:3000/users/new
+# ###
+# GET http://localhost:3000/users/new
 
-###
-POST http://localhost:3000/users/create
+# ###
+# POST http://localhost:3000/users/create
 
-###
-GET http://localhost:3000/users/edit
+# ###
+# GET http://localhost:3000/users/edit
 
-###
-POST http://localhost:3000/users/update
-
-
-###
+# ###
+# POST http://localhost:3000/users/update
 
 
-###
-POST http://localhost:3000/api/users/registro
-Content-Type: application/json
-
-{
-    "username": "test",
-    "email": "test@mail.com",
-    "password": "12345"
-}
-
-###
-POST http://localhost:3000/api/usuarios/login
-Content-Type: application/json
-
-{
-    "email": "test@otro.com",
-    "password": "12345"
-}
+# ###
 
 
+# ###
+# POST http://localhost:3000/api/users/registro
+# Content-Type: application/json
+
+# {
+#     "username": "test",
+#     "email": "test@mail.com",
+#     "password": "12345"
+# }
+
+# ###
+# POST http://localhost:3000/api/usuarios/login
+# Content-Type: application/json
+
+# {
+#     "email": "test@otro.com",
+#     "password": "12345"
+# }
 
 
 
-###
 
-GET http://localhost:3000/api/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJjYWR1Y2EiOjE2MTUzMDAwMzUsImlhdCI6MTYxNTI5OTEzNX0.KVe9yD8Lnyt2bn5RcNe1d4iB8G9uQfhz5LORvBbpfF0
+
+# ###
+
+# GET http://localhost:3000/api/users
+# Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIzLCJjYWR1Y2EiOjE2MTUzMDAwMzUsImlhdCI6MTYxNTI5OTEzNX0.KVe9yD8Lnyt2bn5RcNe1d4iB8G9uQfhz5LORvBbpfF0

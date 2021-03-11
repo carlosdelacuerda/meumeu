@@ -31,12 +31,11 @@ const getByTripId = (pId) => {
     });
 }
 
-const getTripByCountry = (pCountry) => {
+const getByCountry = (pCountry) => {
     return new Promise((resolve, reject) => {
         db.query('SELECT * FROM trips WHERE country = ?', [pCountry], (err, rows) => {
             if (err) return reject(err);
-            if (rows.length === 0) return resolve(null);
-            resolve(rows[0]);
+            resolve(rows);
         });
     });
 }
@@ -63,5 +62,5 @@ const deleteByTripId = (pId) => {
 }
 
 module.exports = {
-    getAllTrips, createTrip, getByTripId, updateByTripId, deleteByTripId, getTripByCountry
+    getAllTrips, createTrip, getByTripId, updateByTripId, deleteByTripId, getByCountry
 }
