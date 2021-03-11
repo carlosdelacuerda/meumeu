@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { caprice } from 'src/app/interfaces/caprice.interface';
 import { CapricesService } from 'src/app/services/caprices.service';
 
@@ -9,22 +9,22 @@ import { CapricesService } from 'src/app/services/caprices.service';
 })
 export class ListCapricesComponent implements OnInit {
 
-  arrCarpices: caprice[];
+  arrCaprices: caprice[];
 
   constructor(
-    // private capricesService = CapricesService
+    private capriceService: CapricesService
   ) { 
-    this.arrCarpices = [];
+    this.arrCaprices = [];
   }
 
   ngOnInit(): void {
-    // this.capricesService.getAllCaprices()
-    // .then(response => {
-    //   this.arrCarpices = response;
-    // }) 
-    // .catch(error => {
-    //   console.log(error)
-    // })
+    this.capriceService.getAllCaprices()
+    .then(response => {
+      this.arrCaprices = response;
+    }) 
+    .catch(error => {
+      console.log(error)
+    })
   }
 
 }

@@ -1,5 +1,5 @@
 <ul class="list">
-    <li >
+    <li *ngFor="let caprice of arrCaprices">
         <div class="info">
             <div class="picture">
                 <figure>
@@ -7,12 +7,12 @@
                 </figure>
             </div>
             <div>
-                <h4><span>Deseo: </span>Mi deseo</h4>
-                <h4><span>Pais: </span>Francia</h4>
+                <h4><span>Deseo: </span>{{ caprice.title }}</h4>
+                <h4><span>Pais: </span>{{ caprice.country }}</h4>
                 <h5><span>Viajero: </span>UserName</h5>
             </div>
         </div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis deleniti, dolore, amet ut, odio odit ad voluptate nulla accusantium adipisci quia.</p>
+        <p>{{ caprice.notes }}</p>
     </li>
 </ul>
 <a class="button-primary" [routerLink]="['/type']" class="publish-button">Publicar un viaje o un capricho</a>
