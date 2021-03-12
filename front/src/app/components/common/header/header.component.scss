@@ -1,6 +1,8 @@
 @import '../../../../scss/styles.scss';
 
 header {
+    display: flex;
+    align-items: center;
     background-color: $color1;
     width: 100%;
     padding: {
@@ -49,6 +51,12 @@ header {
                 height: 100%;
             }
         }
+    }
+    .logarme {
+        margin: auto;
+        margin-right: 0;
+        font-family: $font2;
+        
     }
 
 }

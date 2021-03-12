@@ -47,12 +47,12 @@ a {
 
 // generic
 body{
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: $font1;
   font-size: $fbase;
 }
 h1 {
   font: {
-    family: title, serif;
+    family: $font2;
     size: $fbase*3;
   };
   color: $color2;
@@ -61,7 +61,7 @@ h1 {
 }
 h2 {
   font: {
-    family: title, serif;
+    family: $font2;
     size: $fbase*1.5;
   };
   color: $color2;
