@@ -3,14 +3,14 @@
         <div class="info">
             <div class="picture">
                 <figure>
-                    <img src="https://www.dzoom.org.es/wp-content/uploads/2020/02/portada-foto-perfil-redes-sociales-consejos-810x540.jpg" alt="Trip user profile picture">
+                    <img [src]="trip.picture" alt="Trip user profile picture">
                 </figure>
             </div>
             <div>
                 <h4><span>Pais: </span>{{ trip.country }}</h4>
                 <h5><span>Salida: </span>{{ trip.from }}</h5>
                 <h5><span>Regreso: </span>{{ trip.to }}</h5>
-                <h5><span>Viajero: </span>{{ trip.fk_user }}</h5>
+                <h5><span>Viajero: </span>{{ trip.username }}</h5>
             </div>
         </div>
         <p>{{ trip.notes }}</p>

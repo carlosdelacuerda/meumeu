@@ -1,6 +1,6 @@
 const getAllTrips = () => {
     return new Promise((resolve, reject) => {
-        db.query('SELECT * FROM trips', (err, rows) => {
+        db.query('select t.*, u.username, u.picture from meumeu.users u inner join meumeu.trips t on t.user_id = u.id', (err, rows) => {
             if (err) {
                 return reject(err);
             }

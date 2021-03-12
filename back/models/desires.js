@@ -1,6 +1,16 @@
+// const getAll = () => {
+//     return new Promise((resolve, reject) => {
+//         db.query('SELECT * FROM desires', (err, rows) => {
+//             if (err) {
+//                 return reject(err);
+//             }
+//             resolve(rows);
+//         });
+//     });
+// }
 const getAll = () => {
     return new Promise((resolve, reject) => {
-        db.query('SELECT * FROM desires', (err, rows) => {
+        db.query('select d.*, u.username from meumeu.users u  inner join meumeu.desires d on d.user_id = u.id', (err, rows) => {
             if (err) {
                 return reject(err);
             }

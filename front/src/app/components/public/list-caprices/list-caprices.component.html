@@ -3,13 +3,13 @@
         <div class="info">
             <div class="picture">
                 <figure>
-                    <img src="https://e00-telva.uecdn.es/assets/multimedia/imagenes/2019/11/08/15732087888279.jpg" alt="Desire picture">
+                    <img [src]="caprice.image" alt="Desire picture">
                 </figure>
             </div>
             <div>
                 <h4><span>Deseo: </span>{{ caprice.title }}</h4>
                 <h4><span>Pais: </span>{{ caprice.country }}</h4>
-                <h5><span>Viajero: </span>UserName</h5>
+                <h5><span>Viajero: </span>{{ caprice.username}}</h5>
             </div>
         </div>
         <p>{{ caprice.notes }}</p>
