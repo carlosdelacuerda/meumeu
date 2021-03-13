@@ -1,6 +1,6 @@
-export interface trip {
+export interface register {
     id?: number;
-    user?: string;
+    username?: string;
     country?: string;
     from?: Date;
     to?: Date;

@@ -29,13 +29,23 @@ export class FilterTripsComponent implements OnInit {
 
 
   filterCountry(country) {
-    this.tripService.getByCountry(country)
+    if(country==='ALL') {
+      this.tripService.getAllTrips()
+      .then(response => {
+        this.arrTrips = response;
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    } else {
+      this.tripService.getByCountry(country)
     .then(response => {
       this.arrTrips = response;
     })
     .catch(error => {
       console.log(error)
     })
+    }
   }
 
 

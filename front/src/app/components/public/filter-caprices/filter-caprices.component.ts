@@ -27,13 +27,23 @@ export class FilterCapricesComponent implements OnInit {
   }
 
   filterCountry(country) {
-    this.capriceService.getByCountry(country)
+    if(country==='ALL') {
+      this.capriceService.getAllCaprices()
+      .then(response => {
+        this.arrCaprices = response;
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    } else {
+      this.capriceService.getByCountry(country)
     .then(response => {
       this.arrCaprices = response;
     })
     .catch(error => {
       console.log(error)
     })
+    }
   }
 
 }
