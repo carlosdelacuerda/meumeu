@@ -10,6 +10,7 @@ import { ListTripsComponent } from './components/public/list-trips/list-trips.co
 import { FormCapriceComponent } from './components/publish/form-caprice/form-caprice.component';
 import { FormTripComponent } from './components/publish/form-trip/form-trip.component';
 import { TypeComponent } from './components/publish/type/type.component';
+import { LoginComponent } from './components/user/login/login.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { RegisterComponent } from './components/user/register/register.component';
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'listCaprice', component: FilterCapricesComponent },
   { path: 'listTrip', component: FilterTripsComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: Error404Component }
 ];
 

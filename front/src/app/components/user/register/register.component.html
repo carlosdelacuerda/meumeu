@@ -1,40 +1,39 @@
+<app-nav-perfil></app-nav-perfil>
 <div class="container register">
-    <a class="return" [routerLink]="['../']">
-        volver
-    </a>
-    <h1>Crea tu perfil</h1>
     <div class="form">
-        <figure>
-            <img src="../../../../assets/images/no-user.svg" alt="">
-        </figure>
-        <div class="upload-picture">
-            <h3>Foto de perfil</h3>
-            <input type="file" value="Subir una foto">
+        <div class="form-control">
+            <figure>
+                <img src="../../../../assets/images/no-user.svg" alt="">
+            </figure>
+            <div class="upload-picture">
+                <h5>Foto de perfil</h5>
+                <input type="file" value="Subir una foto">
+            </div>
         </div>
-        <div>
-            <h3>Nombre de usuario</h3>
+        <div class="form-control">
+            <h5>Nombre de usuario</h5>
             <p>Este será el nombre que verán el resto de usuarios</p>
             <input type="text">
         </div>
-        <div>
-            <h3>E-mail</h3>
+        <div class="form-control">
+            <h5>E-mail</h5>
             <p>Tu e-mail estará oculto y sólo lo usaremos para enviarte información relevante</p>
             <input type="email">
         </div>
-        <div>
-            <h3>Password</h3>
+        <div class="form-control">
+            <h5>Password</h5>
             <input type="password">
         </div>
-        <div>
-            <h3>Repite el password</h3>
+        <div class="form-control">
+            <h5>Repite el password</h5>
             <input type="password">
         </div>
-        <div>
+        <div class="form-control conditions">
             <label>
                 <input type="checkbox" id="conditions">
                 <span>Acepto las <a>condiciones de uso</a></span>
             </label>
         </div>
-        <button class="button-submit" type="submit" value="enviar">Regístrame</button>
+        <button class="button button-primary button-register" type="submit" value="enviar">Regístrame</button>
     </div>
 </div>

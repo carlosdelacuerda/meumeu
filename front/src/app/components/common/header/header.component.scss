@@ -5,6 +5,8 @@ header {
     align-items: center;
     background-color: $color1;
     width: 100%;
+    height: $size*6;
+    position: fixed;
     padding: {
         top: $size;
         bottom: $size;
