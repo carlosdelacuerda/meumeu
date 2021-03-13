@@ -1,28 +1,28 @@
 <app-nav-perfil></app-nav-perfil>
 <div class="container register">
-    <div class="form">
+    <form class="form" #register="ngForm" (ngSubmit)="onSubmit(register.value)">
         <div class="form-control">
             <figure>
                 <img src="../../../../assets/images/no-user.svg" alt="">
             </figure>
             <div class="upload-picture">
                 <h5>Foto de perfil</h5>
-                <input type="file" value="Subir una foto">
+                <input type="file" value="Subir una foto" name="picture" ngModel>
             </div>
         </div>
         <div class="form-control">
             <h5>Nombre de usuario</h5>
             <p>Este será el nombre que verán el resto de usuarios</p>
-            <input type="text">
+            <input type="text" name="userName" ngModel>
         </div>
         <div class="form-control">
             <h5>E-mail</h5>
             <p>Tu e-mail estará oculto y sólo lo usaremos para enviarte información relevante</p>
-            <input type="email">
+            <input type="email" name="email" ngModel>
         </div>
         <div class="form-control">
             <h5>Password</h5>
-            <input type="password">
+            <input type="password"  name="password" ngModel>
         </div>
         <div class="form-control">
             <h5>Repite el password</h5>
@@ -34,6 +34,6 @@
                 <span>Acepto las <a>condiciones de uso</a></span>
             </label>
         </div>
-        <button class="button button-primary button-register" type="submit" value="enviar">Regístrame</button>
-    </div>
+        <input class="button button-primary button-register" type="submit" value="ENVIAR">
+    </form>
 </div>

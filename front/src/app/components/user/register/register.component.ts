@@ -13,4 +13,8 @@ export class RegisterComponent implements OnInit {
     
   }
 
+  onSubmit(pForm) {
+    console.log(pForm)
+  }
+
 }
