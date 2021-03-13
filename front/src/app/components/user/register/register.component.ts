@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
+import { user } from '../../../interfaces/user.interface'
 
 @Component({
   selector: 'app-register',
@@ -7,14 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  public users:user [];
+  public user:user;
+
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
     
   }
 
+
+
   onSubmit(pForm) {
-    console.log(pForm)
+    this.usersService.create(this.user).subscribe(
+      (newUser) => {
+        newUser.data = this.user;
+        console.log(newUser);
+      });
+
+  
   }
+
+  
 
 }
