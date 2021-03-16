@@ -10,6 +10,17 @@ const getAllTrips = () => {
 }
 
 
+const getByCountry = (pCountry) => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT TRIPS.*, USERS.* FROM TRIPS , USERS WHERE USERS.ID = TRIPS.USER_ID AND COUNTRY = ?',
+        [pCountry], (err, rows) => {
+            if (err) return reject(err);
+            resolve(rows);
+        });
+    });
+}
+
+
 const createTrip = ({ country, from, to, notes, fk_user }) => {
     return new Promise((resolve, reject) => {
         db.query(
@@ -32,14 +43,6 @@ const getByTripId = (pId) => {
     });
 }
 
-const getByCountry = (pCountry) => {
-    return new Promise((resolve, reject) => {
-        db.query('SELECT * FROM trips WHERE country = ?', [pCountry], (err, rows) => {
-            if (err) return reject(err);
-            resolve(rows);
-        });
-    });
-}
 
 const updateByTripId = ({ country, from, to, notes, fk_user }) => {
     return new Promise((resolve, reject) => {

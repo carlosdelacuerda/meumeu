@@ -1,6 +1,6 @@
 <app-nav-perfil></app-nav-perfil>
 <div class="container login">
-    <div class="form">
+    <form class="form" #login="ngForm" (ngSubmit)="onSubmit(login.value)">
         <div class="form-control">
             <h5>Nombre de usuario o e-mail</h5>
             <input type="text">
@@ -19,6 +19,12 @@
                 </p>
             </div>
         </div>
-        <button class="button button-primary button-register" type="submit" value="enviar">Entrar</button>
-    </div>
+        <div class="form-control">
+            <label>
+                <input type="checkbox" id="registered" checked>
+                <span> Recordar mis datos</span>
+            </label>
+        </div>
+        <input type="submit" class="button button-primary button-register" type="submit" value="ENTRAR">
+    </form>
 </div>

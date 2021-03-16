@@ -19,6 +19,15 @@ const getAll = () => {
     });
 }
 
+const getByCountry= (pCountry) => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT DESIRES.*, USERS.* FROM DESIRES , USERS WHERE USERS.ID = DESIRES.USER_ID AND COUNTRY = ?', [pCountry], (err, rows) => {
+            if (err) return reject(err);
+            resolve(rows);
+        });
+    });
+}
+
 const create = ({ country, from, to, notes, fk_user }) => {
     return new Promise((resolve, reject) => {
         db.query(
@@ -41,14 +50,7 @@ const getById = (pId) => {
     });
 }
 
-const getByCountry= (pCountry) => {
-    return new Promise((resolve, reject) => {
-        db.query('SELECT * FROM trips WHERE country = ?', [pCountry], (err, rows) => {
-            if (err) return reject(err);
-            resolve(rows);
-        });
-    });
-}
+
 
 const updateById = ({ country, from, to, notes, fk_user }) => {
     return new Promise((resolve, reject) => {
