@@ -21,7 +21,7 @@ export class FormTripComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+ 
   }
 
   eventCountry(country){

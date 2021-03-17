@@ -1,5 +1,9 @@
 @import '../../../../scss/styles.scss';
 
+.push-down {
+    width: 100%;
+    height: $size*6;
+}
 header {
     display: flex;
     align-items: center;

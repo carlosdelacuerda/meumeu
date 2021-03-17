@@ -19,9 +19,11 @@ export class AppComponent {
   
 
   ngOnInit(): void {
+    localStorage.removeItem('token');
     // this._activatedRoute.params.subscribe(params=> {
     //   console.log(params)
     // })
+
   }
 
 

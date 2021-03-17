@@ -1,9 +1,9 @@
 <app-nav-perfil></app-nav-perfil>
 <div class="container login">
-    <form class="form" #login="ngForm" (ngSubmit)="onSubmit(login.value)">
+    <form class="form" #login="ngForm" (ngSubmit)="onLogin(login.value)">
         <div class="form-control">
             <h5>Nombre de usuario o e-mail</h5>
-            <input type="text">
+            <input type="text" name="username" ngModel>
             <div class="alert">
                 <p>
                     No existe ese usuario
@@ -12,7 +12,7 @@
         </div>
         <div class="form-control">
             <h5>Password</h5>
-            <input type="password">
+            <input type="password" name="password" ngModel>
             <div class="alert">
                 <p>
                     El password es incorrecto

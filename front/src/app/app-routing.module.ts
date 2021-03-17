@@ -13,18 +13,19 @@ import { TypeComponent } from './components/publish/type/type.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { RegisterComponent } from './components/user/register/register.component';
+import { tokenGuard } from './token.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'type', component: TypeComponent },
-  { path: 'formTrip', component: FormTripComponent },
   { path: 'formCaprice', component: FormCapriceComponent },
   { path: 'listCaprice', component: FilterCapricesComponent },
   { path: 'listTrip', component: FilterTripsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'formTrip', component: FormTripComponent, canActivate: [tokenGuard] },
   { path: '**', component: Error404Component }
 ];
 

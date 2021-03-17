@@ -39,6 +39,13 @@ export class UsersService {
     return this.httpClient.post( this.usersUrl, formValues, httpOptions).toPromise();
    }
 
+   login(user: any):Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders()
+    }
+     return this.httpClient.post(this.usersUrl+'/login',user, httpOptions).toPromise();
+   }
+
 
 }
 

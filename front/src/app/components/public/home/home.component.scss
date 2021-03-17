@@ -2,16 +2,15 @@
 
 .home {
     background-image: url('../../../../assets/images/airplane.png');
+    min-height: 60vh;
     background-repeat: no-repeat;
-    padding-top: $size*6;
-    min-height: 100vh;
     background-size: $size*20;
     background-position: $size*11 $size*12;
     display: flex;
     flex-wrap: wrap;
     .hero-text {
-        margin-bottom: $size*12 ;
-        margin-top: auto;
+        position: absolute;
+        bottom: $size*12 ;
         padding: $size*2;
         div {
             width: 100%;
