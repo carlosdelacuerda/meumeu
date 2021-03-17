@@ -9,11 +9,11 @@ const getAll = () => {
     });
 }
 
-const create = ({ username, email, picture, password, notes }) => {
+const create = ({ username, email, picture, password, description }) => {
     return new Promise((resolve, reject) => {
         db.query(
-            'INSERT INTO users (username, email, picture, password, notes) values (?, ?, ?, ?, ?)',
-            [username, email, picture, password, notes],
+            'INSERT INTO users (username, email, picture, password, description) values (?, ?, ?, ?, ?)',
+            [username, email, picture, password, description],
             (err, result) => {
                 if (err) return reject(err);
                 resolve(result);

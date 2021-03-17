@@ -32,10 +32,11 @@ export class UsersService {
   return this.httpClient.get<user[]>(this.usersUrl).toPromise();
   };
 
-  create (user: user):Observable<any>{
-    let json = JSON.stringify(user);
-    let params = "json="+json;
-    return this.httpClient.post( this.usersUrl, params, httpOptions);
+  create (formValues):Promise<any>{
+    const httpOptions = {
+      headers: new HttpHeaders()
+    }
+    return this.httpClient.post( this.usersUrl, formValues, httpOptions).toPromise();
    }
 
 

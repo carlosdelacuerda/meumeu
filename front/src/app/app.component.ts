@@ -9,15 +9,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AppComponent {
 
+  headerView: boolean;
+
   constructor(
     private _activatedRoute: ActivatedRoute,
   ) {
-    
+    this.headerView = true;
   }
   
 
   ngOnInit(): void {
-    
+    // this._activatedRoute.params.subscribe(params=> {
+    //   console.log(params)
+    // })
   }
 
 

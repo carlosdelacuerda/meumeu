@@ -10,25 +10,25 @@ import { user } from '../../../interfaces/user.interface'
 export class RegisterComponent implements OnInit {
 
   public users:user [];
-  public user:user;
+  public user: user;
 
-  constructor(private usersService: UsersService) { }
+  // formUser: user;
+  
+  constructor(private usersService: UsersService) { 
+
+
+
+  }
+
 
   ngOnInit(): void {
-    
   }
 
 
 
-  onSubmit(pForm) {
-    this.usersService.create(this.user).subscribe(
-      (newUser) => {
-        newUser.data = this.user;
-        console.log(newUser);
-      });
-
-  
-  }
+  async onSubmit(pForm) {
+    await this.usersService.create(pForm); 
+    }
 
   
 
