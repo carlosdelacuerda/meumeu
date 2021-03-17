@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { observable, Observable } from 'rxjs';
 import { user } from '../interfaces/user.interface';
 import { baseUrl } from './baseUrl';
 
@@ -44,6 +44,14 @@ export class UsersService {
       headers: new HttpHeaders()
     }
      return this.httpClient.post(this.usersUrl+'/login',user, httpOptions).toPromise();
+   }
+
+   getToken(): any {
+      const tokenActive = localStorage.token;
+      if (tokenActive) {
+        return true;
+      }
+      return false;
    }
 
 
