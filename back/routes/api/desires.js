@@ -14,9 +14,9 @@ router.get('/', async (req, res) => {
 });
 
 // Crear un nuevo deseo
-// Los datos para crear el deseo, llegan a través del BODY
 router.post('/', async (req, res) => {
     try {
+        console.log(req.body)
         const result = await create(req.body);
         res.json(result);
     } catch (error) {

@@ -29,10 +29,9 @@ export class FormTripComponent implements OnInit {
   }
 
 
-  onClick() {
-    console.log('test')
-    // const response = await this.tripService.insert(this.newTrip);
-    // this.router.navigate(['/']);
-  }
+  async onSubmit(pForm) {
+    console.log(pForm)
+    await this.tripService.create(pForm); 
+    }
 
 }

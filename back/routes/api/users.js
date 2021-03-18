@@ -27,10 +27,9 @@ router.get('/:user', async (req, res) => {
 });
 
 
-// Los datos para crear el cliente, me llegan a través del BODY
+// crear user
 router.post('/', async (req, res) => {
     try {
-        console.log(req.body)
         const result = await create(req.body);
         res.json(result);
     } catch (error) {

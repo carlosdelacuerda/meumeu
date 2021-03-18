@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { caprice } from '../interfaces/caprice.interface';
 import { baseUrl } from './baseUrl';
 
@@ -18,7 +18,13 @@ export class CapricesService {
     return this.httpClient.get<caprice[]>(this.capricesUrl).toPromise();
     }
 
-    getByCountry(country){
+  getByCountry(country){
       return this.httpClient.get<caprice[]>(this.capricesUrl+"/"+country).toPromise();
+  }
+  create (formValues):Promise<any>{
+    const httpOptions = {
+      headers: new HttpHeaders()
     }
+    return this.httpClient.post( this.capricesUrl, formValues, httpOptions).toPromise();
+   }
 }

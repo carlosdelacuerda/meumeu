@@ -1,11 +1,28 @@
-<form>
+<form class="form" #newTrip="ngForm" (ngSubmit)="onSubmit(newTrip.value)">
     <h1>Publica tu viaje</h1>
     <h5>Pais al que viajas</h5>
     <app-countries (exportCountry)="eventCountry($event)"></app-countries>
-    <h5>Fecha del viaje</h5>
-    <input type="date" placeholder="desde">
-    <h5>¿Quieres agregar alguna nota?</h5>
-    <textarea></textarea>
-    <input class="button-submit" (click)="onClick()" value="Publicar viaje">
+    <div class="form-control">
+
+        <!-- borrar -->
+        <input type="text" name="country" ngModel value="Catalonia">
+        <input type="number" name="user_id" ngModel value="1">
+
+        <!-- borrar -->
+
+
+
+        <h5>Salgo</h5>
+        <input type="date" name="begining" ngModel>
+    </div>
+    <div class="form-control">
+        <h5>vulelvo</h5>
+        <input type="date" name="ending" ngModel>
+    </div>
+    <div class="form-control">
+        <h5>¿Quieres agregar alguna nota?</h5>
+        <textarea name="notes" ngModel></textarea>
+    </div>
+    <input class="button button-primary button-register" type="submit" value="Publicar viaje">
 </form>
 

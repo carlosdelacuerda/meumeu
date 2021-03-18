@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { trip } from '../interfaces/trip.interface';
 import { baseUrl } from './baseUrl';
 
@@ -23,5 +23,18 @@ export class TripService {
     return this.httpClient.get<trip[]>(this.tripsUrl+"/"+country).toPromise();
   }
 
+  create (formValues):Promise<any>{
+    const httpOptions = {
+      headers: new HttpHeaders()
+    }
+    return this.httpClient.post( this.tripsUrl, formValues, httpOptions).toPromise();
+   }
+
 
 }
+
+
+
+
+
+

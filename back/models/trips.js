@@ -21,12 +21,11 @@ const getByCountry = (pCountry) => {
 }
 
 
-const createTrip = ({ country, from, to, notes, fk_user }) => {
+const create = ({ country, begining, ending, notes, user_id }) => {
     return new Promise((resolve, reject) => {
         db.query(
-            'INSERT INTO trips (country, from, to, notes, fk_user) values (?, ?, ?, ?, ?)',
-            [country, from, to, notes, fk_user],
-            (err, result) => {
+            "INSERT INTO trips (country, begining, ending, notes, user_id) values (?, ?, ?, ?, ?)",
+            [country, begining, ending, notes, user_id], (err, result) => {
                 if (err) return reject(err);
                 resolve(result);
             })
@@ -66,5 +65,5 @@ const deleteByTripId = (pId) => {
 }
 
 module.exports = {
-    getAllTrips, createTrip, getByTripId, updateByTripId, deleteByTripId, getByCountry
+    getAllTrips, create, getByTripId, updateByTripId, deleteByTripId, getByCountry
 }

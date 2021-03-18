@@ -28,17 +28,18 @@ const getByCountry= (pCountry) => {
     });
 }
 
-const create = ({ country, from, to, notes, fk_user }) => {
+const create = ({ title, country, date, notes, image, user_id }) => {
     return new Promise((resolve, reject) => {
         db.query(
-            'INSERT INTO desires (country, from, to, notes, fk_user) values (?, ?, ?, ?, ?)',
-            [country, from, to, notes, fk_user],
-            (err, result) => {
+            "INSERT INTO desires (title, country, date, notes, image, user_id) values (?, ?, ?, ?, ?, ?)",
+            [title, country, date, notes, image, user_id], (err, result) => {
                 if (err) return reject(err);
                 resolve(result);
             })
     });
 }
+
+
 
 const getById = (pId) => {
     return new Promise((resolve, reject) => {

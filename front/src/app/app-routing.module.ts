@@ -20,12 +20,12 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'type', component: TypeComponent },
-  { path: 'formCaprice', component: FormCapriceComponent },
   { path: 'listCaprice', component: FilterCapricesComponent },
   { path: 'listTrip', component: FilterTripsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'formTrip', component: FormTripComponent, canActivate: [tokenGuard] },
+  { path: 'formCaprice', component: FormCapriceComponent, canActivate: [tokenGuard] },
   { path: '**', component: Error404Component }
 ];
 

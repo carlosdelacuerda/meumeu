@@ -18,3 +18,28 @@ Content-Type: application/json
     "password": "123"
 }
 
+
+###
+POST http://localhost:3000/api/trips/
+Content-Type: application/json
+
+{
+    "country": "Spain",
+    "from": "2000-01-01",
+    "to": "2000-01-01",
+    "notes": "lorem ipsum",
+    "user_id": 2
+}
+
+###
+POST http://localhost:3000/api/desires/
+Content-Type: application/json
+
+{
+    "country": "Spain",
+    "from": "2000-01-01",
+    "to": "2000-01-01",
+    "notes": "lorem ipsum",
+    "user_id": 2
+}
+
