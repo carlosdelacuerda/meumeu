@@ -5,13 +5,13 @@
         </a>
         <a [routerLink]="['/register']" class="logarme"  id="toRegister"  *ngIf="!isActive">ENTRAR</a>
         <div class="logged"  id="toProfile" *ngIf="isActive">
-            <a class="icon">
+            <a class="icon" style="display: none;">
                 <img src="../../../../assets/images/bell.svg" alt="">
                 <span class="alert"></span>
             </a>
             <a class="icon">
                 <img class="icon" src="../../../../assets/images/envelope.svg" alt="">
-                <span class="alert"></span>
+                <span class="alert" style="display: none;"></span>
             </a>
             <a [routerLink]="['/profile']">
                 <figure class="profile">

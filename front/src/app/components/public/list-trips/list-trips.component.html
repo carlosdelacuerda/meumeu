@@ -7,10 +7,10 @@
                 </figure>
             </div>
             <div>
-                <h4><span>Pais: </span>{{ trip.country }}</h4>
-                <h5><span>Salida: </span>{{ trip.from }}</h5>
-                <h5><span>Regreso: </span>{{ trip.to }}</h5>
-                <h5><span>Viajero: </span>{{ trip.username }}</h5>
+                <h6><span class="text-dark">{{ trip.username }}</span> viaja a</h6>
+                <h4 class="m-top-1">{{ trip.country }}</h4>
+                <h6>desde el <span>{{ trip.begining  | date:'dd-MM-yyyy'  }}</span></h6>
+                <h6>hasta el <span>{{ trip.ending  | date:'dd-MM-yyyy'}}</span></h6>
             </div>
         </div>
         <p>{{ trip.notes }}</p>

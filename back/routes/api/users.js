@@ -1,4 +1,4 @@
-const { getAll, create, getByUsername, deleteById, updateById } = require('../../models/users');
+const { getAll, create, getByUsername, getById, deleteById, updateById } = require('../../models/users');
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -17,10 +17,19 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:user', async (req, res) => {
+// router.get('/:user', async (req, res) => {
+//     try {
+//         const userByUserName = await getByUsername(req.params.user);
+//         res.json(userByUserName);
+//     } catch (error) {
+//         res.json({ error: error.message });
+//     }
+// });
+
+router.get('/:id', async (req, res) => {
     try {
-        const userByUserName = await getByUsername(req.params.user);
-        res.json(userByUserName);
+        const userById = await getById(req.params.id);
+        res.json(userById);
     } catch (error) {
         res.json({ error: error.message });
     }
@@ -59,11 +68,23 @@ router.post('/login', async (req, res) => {
 
 function createToken(pUser) {
     const data = {
-        username: pUser.user,
+        id: pUser.id,
     }
 
     return jwt.sign(data, 'm1T*k3n');
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Borro un cliente
 router.delete('/:idUser', async (req, res) => {

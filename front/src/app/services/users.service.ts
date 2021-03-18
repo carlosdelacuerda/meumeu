@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { observable, Observable } from 'rxjs';
 import { user } from '../interfaces/user.interface';
 import { baseUrl } from './baseUrl';
+import jwt_decode from 'jwt-decode';
 
 
 const httpOptions = {
@@ -28,9 +29,9 @@ export class UsersService {
  }
 
 
- getAllUsers(): Promise<user[]> {
-  return this.httpClient.get<user[]>(this.usersUrl).toPromise();
-  };
+  getAllUsers(): Promise<user[]> {
+    return this.httpClient.get<user[]>(this.usersUrl).toPromise();
+    };
 
   create (formValues):Promise<any>{
     const httpOptions = {
@@ -53,6 +54,17 @@ export class UsersService {
       }
       return false;
    }
+
+   getById(userId){
+    return this.httpClient.get<user>(this.usersUrl+"/"+userId).toPromise();
+  }
+
+  tokenId (){
+    const token = localStorage.getItem("token");
+    const decode = jwt_decode(token);
+    console.log(decode['id'])
+
+   }  
 
 
 }

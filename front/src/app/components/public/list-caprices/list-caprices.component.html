@@ -7,9 +7,9 @@
                 </figure>
             </div>
             <div>
-                <h4><span>Deseo: </span>{{ caprice.title }}</h4>
-                <h4><span>Pais: </span>{{ caprice.country }}</h4>
-                <h5><span>Viajero: </span>{{ caprice.username}}</h5>
+                <h4>{{ caprice.title }}</h4>
+                <h6>de <span>{{ caprice.country }}</span></h6>
+                <h6>publicado por <span class="text-dark">{{ caprice.username}}</span></h6>
             </div>
         </div>
         <p>{{ caprice.notes }}</p>

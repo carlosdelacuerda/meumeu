@@ -26,6 +26,7 @@ router.get('/:country', async (req, res) => {
 
 // Crear un nuevo viaje
 router.post('/', async (req, res) => {
+    console.log(req.userId);
     try {
         console.log(req.body)
         const result = await create(req.body);

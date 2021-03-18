@@ -145,20 +145,48 @@ input , select {
       flex-wrap: wrap;
       width: 100%;
       padding-top: $size*2;
-      input {
-        margin-top: $size;
-      }
       a {
         color: $color2;
         font-weight: $sbold;
       }
     }
-    input[type="text"], input[type="email"], input[type="password"] {
+    h5 {
+      font-size: $fbase;
+      margin-bottom: $size;
+      margin-left: 5%;
+
+    }
+    p {
+      width: 90%;
+      margin: -$size 0 $size 5%;
+
+    }
+    input[type="text"], input[type="email"], input[type="password"], input[type="date"], select, textarea {
+      width: 90%;
+      margin-left: 5%;
+    }
+    input[type="checkbox"] {
+      margin: $size*2 0 $size 5%;
+    }
+    label {
       width: 100%;
     }
+    textarea {
+      height: $size*8;
+      border: 1px solid $color1;
+    }
     figure {
-        width: 33%;
+        width: 30%;
         display: inline;
+        margin-right: 3%;
+        border: 2px solid $color1;
+        margin-left: 2%;
+        border-radius: 100%;
+        img {
+          margin: auto;
+          align-items: center;
+          width: 100%;
+        }
     }
     .upload-picture {          
         position: relative;
@@ -193,4 +221,17 @@ input , select {
         width: $size*28;
         display: inline-block;            
       }
+}
+
+
+// helper classes
+
+.text-dark {
+  color: $color1 !important;
+}
+.m-top-1 {
+  margin-top: $size;
+}
+.m-top-2 {
+  margin-top: $size*2;
 }

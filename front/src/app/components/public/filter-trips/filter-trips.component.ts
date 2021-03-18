@@ -41,7 +41,6 @@ export class FilterTripsComponent implements OnInit {
       this.tripService.getByCountry(country)
     .then(response => {
       this.arrTrips = response;
-      console.log(this.arrTrips);
     })
     .catch(error => {
       console.log(error)

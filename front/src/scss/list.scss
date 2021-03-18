@@ -8,7 +8,10 @@
         padding: {
             bottom: $size;
             top: $size;
-        };
+        }
+        &:last-child {
+            margin-bottom: $size*12;
+        }
         .info {
             padding: $size;
             padding-left: 0;
@@ -18,12 +21,24 @@
                 margin: auto;
                 border-radius: 100%;
                 overflow: hidden;
-                width: $size*8;
-                height: $size*8;
+                width: $size*10;
+                height: $size*10;
+                border: 2px solid $color1;
                 img {
                     height: 100%;
                 }
-            };
+            }
+            h4 {
+                color: $color2;
+                font-weight: 900;
+            }
+            h6 {
+                margin-top: $size;
+                span {
+                    font-weight: 700;
+                    color: $color2;
+                }
+            }
             .picture {
                 display: flex;
                 flex-wrap: wrap;

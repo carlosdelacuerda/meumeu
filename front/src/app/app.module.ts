@@ -32,7 +32,8 @@ import { Error404Component } from './components/public/error404/error404.compone
 import { FormsModule } from '@angular/forms';
 import { CountriesComponent } from './components/public/countries/countries.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavPerfilComponent } from './components/public/nav-perfil/nav-perfil.component';
+import { NavPerfilComponent } from './components/user/nav-perfil/nav-perfil.component';
+import { NavPublishComponent } from './components/publish/nav-publish/nav-publish.component';
 
 
 
@@ -67,6 +68,7 @@ import { NavPerfilComponent } from './components/public/nav-perfil/nav-perfil.co
     Error404Component,
     CountriesComponent,
     NavPerfilComponent,
+    NavPublishComponent,
   ],
   imports: [
     BrowserModule,
