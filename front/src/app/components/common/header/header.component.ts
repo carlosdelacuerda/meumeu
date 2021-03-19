@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { user } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
+import jwt_decode from 'jwt-decode';
 
 
 @Component({
@@ -9,18 +11,33 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class HeaderComponent implements OnInit {
 
-  isActive: boolean;
+  @Input() userData: user;
+  allData: user;
 
+  isActive: boolean;
+  
   constructor(private userService: UsersService) { 
     this.isActive = false;
+    
   }
 
-  ngOnInit(): void {
-    this.userService.tokenId()
+  async ngOnInit() { 
+
+    const token = localStorage.getItem("token");
+    const decode = jwt_decode(token);
+    this.userData = decode['id'];
+
+    this.allData = await this.userService.getById(this.userData);
+
   }
+
+ 
 
   ngDoCheck(){
     this.isActive = this.userService.getToken();
   }
 
+
 }
+
+

@@ -14,12 +14,12 @@ export class AppComponent implements OnInit {
 
   headerView: boolean;
   userData: user;
-  myId: string;
+  myId: number;
 
 
   constructor(
     private _activatedRoute: ActivatedRoute,
-    private userSercice: UsersService,
+    private userService: UsersService,
     private tokenCheck: tokenGuard
   ) {
     this.headerView = true;
@@ -28,10 +28,8 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     
-  
-    
-    // this.userData = await this.userSercice.getById(1);
-    // console.log(this.userData.username)
+    // this.userData = await this.userService.getById(1);
+    // console.log(this.userData.id)
   }
 
   

@@ -62,8 +62,7 @@ export class UsersService {
   tokenId (){
     const token = localStorage.getItem("token");
     const decode = jwt_decode(token);
-    console.log(decode['id'])
-
+    console.log('test',  decode['id'])
    }  
 
 
