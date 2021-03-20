@@ -1,6 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MailReviveComponent } from './components/comunication/mail-revive/mail-revive.component';
+import { MailSendComponent } from './components/comunication/mail-send/mail-send.component';
 import { Error404Component } from './components/public/error404/error404.component';
 import { FilterCapricesComponent } from './components/public/filter-caprices/filter-caprices.component';
 import { FilterTripsComponent } from './components/public/filter-trips/filter-trips.component';
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'formTrip', component: FormTripComponent, canActivate: [tokenGuard] },
   { path: 'formCaprice', component: FormCapriceComponent, canActivate: [tokenGuard] },
+  { path: 'mailRecive', component: MailReviveComponent, canActivate: [tokenGuard] },
+  { path: 'mailSend', component: MailSendComponent, canActivate: [tokenGuard] },
   { path: '**', component: Error404Component }
 ];
 

@@ -25,7 +25,6 @@ import { ExitRegisterComponent } from './components/user/exit-register/exit-regi
 import { ConfirmatedRegisterComponent } from './components/user/confirmated-register/confirmated-register.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
-import { MailListComponent } from './components/comunication/mail-list/mail-list.component';
 import { MailDetailComponent } from './components/comunication/mail-detail/mail-detail.component';
 import { NotificationsComponent } from './components/comunication/notifications/notifications.component';
 import { Error404Component } from './components/public/error404/error404.component';
@@ -34,6 +33,9 @@ import { CountriesComponent } from './components/public/countries/countries.comp
 import { HttpClientModule } from '@angular/common/http';
 import { NavPerfilComponent } from './components/user/nav-perfil/nav-perfil.component';
 import { NavPublishComponent } from './components/publish/nav-publish/nav-publish.component';
+import { MailSendComponent } from './components/comunication/mail-send/mail-send.component';
+import { MailReviveComponent } from './components/comunication/mail-revive/mail-revive.component';
+import { NavMailComponent } from './components/comunication/nav-mail/nav-mail.component';
 
 
 
@@ -62,13 +64,15 @@ import { NavPublishComponent } from './components/publish/nav-publish/nav-publis
     ConfirmatedRegisterComponent,
     LoginComponent,
     ProfileComponent,
-    MailListComponent,
     MailDetailComponent,
     NotificationsComponent,
     Error404Component,
     CountriesComponent,
     NavPerfilComponent,
     NavPublishComponent,
+    MailSendComponent,
+    MailReviveComponent,
+    NavMailComponent,
   ],
   imports: [
     BrowserModule,

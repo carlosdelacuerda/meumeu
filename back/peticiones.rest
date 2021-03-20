@@ -44,8 +44,30 @@ Content-Type: application/json
 }
 
 
+
+
+
+
 ###
 GET http://localhost:3000/api/users/1
+
+
+###
+GET  http://localhost:3000/api/mailing/
+Content-Type: application/json
+
+{
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE2MDkyOTA0fQ.3APaLI7UaflbAKpV4M5GoTE6wreFc_PQAcs9VkQe0mM"
+}
+
+
+###
+GET http://localhost:3000/api/desires/1
+Content-Type: application/json
+
+###
+GET http://localhost:3000/api/mailing/1
+Content-Type: application/json
 
 
 

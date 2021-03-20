@@ -13,7 +13,7 @@ export class ListTripsComponent implements OnInit {
 
 
   constructor(
-    private tripService: TripService,
+    private tripService: TripService
     ) { 
     this.arrTrips = [];
   }
