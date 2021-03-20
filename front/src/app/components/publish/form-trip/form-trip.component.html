@@ -2,13 +2,9 @@
 <form class="form" #newTrip="ngForm" (ngSubmit)="onSubmit(newTrip.value)">
     <div class="form-control">
         <h5>Viajo a</h5>
-        <app-countries (exportCountry)="eventCountry($event)"></app-countries>
+        <app-countries (exportCountry)="eventCountry($event)" name="country"></app-countries>
     </div>
     <div class="form-control">
-        <!-- borrar -->
-        <!-- <input type="text" name="country" ngModel value="Catalonia">
-        <input type="number" name="user_id" ngModel value="1"> -->
-        <!-- borrar -->
         <h5>Salgo el</h5>
         <input type="date" name="begining" ngModel>
     </div>

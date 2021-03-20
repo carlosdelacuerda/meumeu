@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { caprice } from 'src/app/interfaces/caprice.interface';
 import { CapricesService } from 'src/app/services/caprices.service';
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-form-caprice',
@@ -10,6 +11,7 @@ import { CapricesService } from 'src/app/services/caprices.service';
 })
 export class FormCapriceComponent implements OnInit {
 
+  myCountry: string;
   newDesire: caprice;
 
   constructor(
@@ -25,12 +27,15 @@ export class FormCapriceComponent implements OnInit {
   }
 
   eventCountry(country){
-    this.newDesire.country = country;
+    this.myCountry = country;
   }
 
 
   async onSubmit(pForm) {
-    console.log(pForm)
+    const token = localStorage.getItem("token");
+    const decode = jwt_decode(token);
+    pForm.user_id = decode['id'];
+    pForm.country = this.myCountry;
     await this.capricesService.create(pForm); 
     }
 

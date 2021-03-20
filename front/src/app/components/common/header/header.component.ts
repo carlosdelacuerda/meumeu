@@ -22,13 +22,11 @@ export class HeaderComponent implements OnInit {
   }
 
   async ngOnInit() { 
-
     const token = localStorage.getItem("token");
     const decode = jwt_decode(token);
     this.userData = decode['id'];
 
     this.allData = await this.userService.getById(this.userData);
-
   }
 
  
