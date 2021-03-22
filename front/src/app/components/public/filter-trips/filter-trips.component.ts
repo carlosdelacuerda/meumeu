@@ -39,12 +39,12 @@ export class FilterTripsComponent implements OnInit {
       })
     } else {
       this.tripService.getByCountry(country)
-    .then(response => {
-      this.arrTrips = response;
-    })
-    .catch(error => {
-      console.log(error)
-    })
+      .then(response => {
+        this.arrTrips = response;
+      })
+      .catch(error => {
+        console.log(error)
+      })
     }
   }
 

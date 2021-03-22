@@ -1,6 +1,9 @@
 @import './styles.scss';  
   
 .mail-list {
+    a {
+        color: $color1;
+    }
     li {
         padding: $size*2;
         border-bottom: 1px solid $color4;

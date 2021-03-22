@@ -12,6 +12,10 @@
         &:last-child {
             margin-bottom: $size*12;
         }
+        a {
+            padding-left: $size;
+            color: $color1;
+        }
         .info {
             padding: $size;
             padding-left: 0;
@@ -24,6 +28,7 @@
                 width: $size*10;
                 height: $size*10;
                 border: 2px solid $color1;
+                margin-right: $size;
                 img {
                     height: 100%;
                 }

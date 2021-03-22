@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailCapriceComponent } from './detail-caprice.component';
+import { SendDetailComponent } from './send-detail.component';
 
-describe('DetailCapriceComponent', () => {
-  let component: DetailCapriceComponent;
-  let fixture: ComponentFixture<DetailCapriceComponent>;
+describe('SendDetailComponent', () => {
+  let component: SendDetailComponent;
+  let fixture: ComponentFixture<SendDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailCapriceComponent ]
+      declarations: [ SendDetailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailCapriceComponent);
+    fixture = TestBed.createComponent(SendDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,4 +1,4 @@
-const { getAll, create, deleteById, updateById, getByCountry } = require('../../models/desires');
+const { getAll, create, deleteById, updateById, getByCountry, getById } = require('../../models/desires');
 const router = require('express').Router();
 
 // Recupera todos los deseos y devuelve JSON
@@ -29,6 +29,17 @@ router.get('/:country', async (req, res) => {
     try {
         const desirestByCountry = await getByCountry(req.params.country);
         res.json(desirestByCountry);
+    } catch (error) {
+        res.json({ error: error.message });
+    }
+});
+
+
+//detalle deseo
+router.get('/detaildesire/:id', async (req, res) => {
+    try {
+        const byId = await getById (req.params.id);
+        res.json(byId);
     } catch (error) {
         res.json({ error: error.message });
     }

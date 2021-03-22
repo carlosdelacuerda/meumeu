@@ -21,6 +21,16 @@ const getByCountry = (pCountry) => {
 }
 
 
+const getById = (pId) => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT t.*, u.username as username, u.picture as picture FROM meumeu.trips t INNER JOIN meumeu.users u ON u.id = t.user_id WHERE t.user_id = ?', [pId], (err, rows) => {
+            if (err) return reject(err); 
+            if (rows.length === 0) return resolve(null);
+            resolve(rows[0]);
+        });
+    });
+}
+
 const create = ({ country, begining, ending, notes, user_id }) => {
     return new Promise((resolve, reject) => {
         db.query(
@@ -32,15 +42,6 @@ const create = ({ country, begining, ending, notes, user_id }) => {
     });
 }
 
-const getByTripId = (pId) => {
-    return new Promise((resolve, reject) => {
-        db.query('SELECT * FROM trips WHERE id = ?', [pId], (err, rows) => {
-            if (err) return reject(err); 
-            if (rows.length === 0) return resolve(null);
-            resolve(rows[0]);
-        });
-    });
-}
 
 
 const updateByTripId = ({ country, from, to, notes, fk_user }) => {
@@ -65,5 +66,5 @@ const deleteByTripId = (pId) => {
 }
 
 module.exports = {
-    getAllTrips, create, getByTripId, updateByTripId, deleteByTripId, getByCountry
+    getAllTrips, create, getById, updateByTripId, deleteByTripId, getByCountry
 }

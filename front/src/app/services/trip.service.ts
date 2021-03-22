@@ -23,6 +23,10 @@ export class TripService {
     return this.httpClient.get<trip[]>(this.tripsUrl+"/"+country).toPromise();
   }
 
+  byId(id){
+    return this.httpClient.get<trip>(this.tripsUrl+"/detail/"+id).toPromise();
+  }
+
   create (formValues):Promise<any>{
     const httpOptions = {
       headers: new HttpHeaders()

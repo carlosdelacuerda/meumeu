@@ -21,10 +21,16 @@ export class CapricesService {
   getByCountry(country){
       return this.httpClient.get<caprice[]>(this.capricesUrl+"/"+country).toPromise();
   }
+  
   create (formValues):Promise<any>{
     const httpOptions = {
       headers: new HttpHeaders()
     }
     return this.httpClient.post( this.capricesUrl, formValues, httpOptions).toPromise();
    }
+
+
+  byId(id){
+    return this.httpClient.get<caprice>(this.capricesUrl+"/detaildesire/"+id).toPromise();
+  }
 }

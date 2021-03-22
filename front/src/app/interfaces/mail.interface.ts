@@ -7,4 +7,5 @@ export interface mail {
     fk_desire?: number;
     fk_trip?: number;
     fk_message?: number;
+    username?: string;
 }

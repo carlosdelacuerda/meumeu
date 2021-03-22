@@ -36,6 +36,8 @@ import { NavPublishComponent } from './components/publish/nav-publish/nav-publis
 import { MailSendComponent } from './components/comunication/mail-send/mail-send.component';
 import { MailReviveComponent } from './components/comunication/mail-revive/mail-revive.component';
 import { NavMailComponent } from './components/comunication/nav-mail/nav-mail.component';
+import { InboxDetailComponent } from './components/comunication/inbox-detail/inbox-detail.component';
+import { SendDetailComponent } from './components/comunication/send-detail/send-detail.component';
 
 
 
@@ -73,6 +75,8 @@ import { NavMailComponent } from './components/comunication/nav-mail/nav-mail.co
     MailSendComponent,
     MailReviveComponent,
     NavMailComponent,
+    InboxDetailComponent,
+    SendDetailComponent,
   ],
   imports: [
     BrowserModule,
