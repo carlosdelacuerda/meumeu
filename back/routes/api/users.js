@@ -39,6 +39,7 @@ router.get('/:id', async (req, res) => {
 // crear user
 router.post('/', async (req, res) => {
     try {
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
         const result = await create(req.body);
         res.json(result);
     } catch (error) {
@@ -52,8 +53,8 @@ router.post('/login', async (req, res) => {
     const user = await getByUsername(req.body.username);
     if (user) {
         // Compruebo si las password coinciden
-        // const match = bcrypt.compareSync(req.body.password, user.password);
-        if (req.body.password === user.password) {
+        const match = bcrypt.compareSync(req.body.password, user.password);
+        if (match) {
             res.json({
                 success: 'Login correcto',
                 token: createToken(user)
