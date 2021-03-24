@@ -23,4 +23,8 @@ export class ProfileComponent implements OnInit {
     this.allData = await this.userService.getById(this.userData);
   }
 
+  onClick() {
+    localStorage.clear();
+  }
+
 }

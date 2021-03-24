@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { user } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 import jwt_decode from 'jwt-decode';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -15,10 +16,17 @@ export class HeaderComponent implements OnInit {
   allData: user;
 
   isActive: boolean;
+
+  users$: Observable<boolean>;
   
   constructor(private userService: UsersService) { 
-    this.isActive = false;
-    
+    this.users$ = this.userService.getLogged$();
+    this.users$.subscribe(async ()=>{
+      const token = localStorage.getItem("token");
+      const decode = jwt_decode(token);
+      this.userData = decode['id'];
+      this.allData = await this.userService.getById(this.userData);
+    })
   }
 
   async ngOnInit() { 
