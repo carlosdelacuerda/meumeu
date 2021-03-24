@@ -28,7 +28,7 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { MailDetailComponent } from './components/comunication/mail-detail/mail-detail.component';
 import { NotificationsComponent } from './components/comunication/notifications/notifications.component';
 import { Error404Component } from './components/public/error404/error404.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CountriesComponent } from './components/public/countries/countries.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavPerfilComponent } from './components/user/nav-perfil/nav-perfil.component';
@@ -82,7 +82,8 @@ import { SendDetailComponent } from './components/comunication/send-detail/send-
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

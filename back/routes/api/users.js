@@ -3,7 +3,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const multer = require('multer');
-const upload = multer({ dest: 'assets/images/profile' });
+const upload = multer({ dest: 'public/images/profile' });
 const fs = require('fs');
 
 // Recupera todos los clientes y devuelve JSON
@@ -40,15 +40,15 @@ router.get('/:id', async (req, res) => {
 
 
 // crear user
-router.post('/', async (req, res) => {
-    try {
-        req.body.password = bcrypt.hashSync(req.body.password, 10);
-        const result = await create(req.body);
-        res.json(result);
-    } catch (error) {
-        res.status(422).json({ error: error.message });
-    }
-});
+// router.post('/', async (req, res) => {
+//     try {
+//         req.body.password = bcrypt.hashSync(req.body.password, 10);
+//         const result = await create(req.body);
+//         res.json(result);
+//     } catch (error) {
+//         res.status(422).json({ error: error.message });
+//     }
+// });
 
 // subida imágenes
 
@@ -60,6 +60,10 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', upload.single('picture'), async (req, res) => {
+    // const userCheck = await checkUsername(req.body.username);
+    // if (userCheck != null) {
+    //     return res.json('usuario existente')
+    // } 
     console.log(req.file);
     // Antes de guardar el producto en la base de datos, modificamos la imagen para situarla donde nos interesa
     const extension = '.' + req.file.mimetype.split('/')[1];
@@ -74,9 +78,12 @@ router.post('/', upload.single('picture'), async (req, res) => {
     req.body.picture = newName;
 
     try {
-        const newImage = await user.create(req.body);
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
+        const newImage = await create(req.body);
+        console.log(newImage)
         res.json(newImage);
     } catch (err) {
+        console.log(err)
         res.json(err);
     }
 

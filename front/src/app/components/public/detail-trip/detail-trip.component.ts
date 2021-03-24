@@ -7,6 +7,7 @@ import { mail } from 'src/app/interfaces/mail.interface';
 import { MailingService } from 'src/app/services/mailing.service';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
+import { baseUrl } from 'src/app/services/baseUrl';
 
 
 @Component({
@@ -20,8 +21,8 @@ export class DetailTripComponent implements OnInit {
   allData: user;
 
   myCountry: string;
-
   newMail: mail;
+  baseUrl: string = baseUrl;
 
   myTrip: tripDetail;
   myId: number;
@@ -45,7 +46,7 @@ export class DetailTripComponent implements OnInit {
     this.positionId = arrId.length-1;
     const urlFinal = arrId[this.positionId];
     this.myTrip = await this.tripService.byId(urlFinal);
-
+    console.log(this.myTrip)
   } 
 
   showModal(){

@@ -36,7 +36,7 @@ router.get('/:country', async (req, res) => {
 
 
 //detalle deseo
-router.get('/detaildesire/:id', async (req, res) => {
+router.get('/detail/:id', async (req, res) => {
     try {
         const byId = await getById (req.params.id);
         res.json(byId);

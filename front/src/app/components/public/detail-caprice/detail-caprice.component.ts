@@ -7,6 +7,7 @@ import { mail } from 'src/app/interfaces/mail.interface';
 import { MailingService } from 'src/app/services/mailing.service';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
+import { baseUrl } from 'src/app/services/baseUrl';
 
 
 @Component({
@@ -19,8 +20,8 @@ export class DetailCapriceComponent implements OnInit {
   allData: user;
 
   myCountry: string;
-
   newMail: mail;
+  baseUrl: string = baseUrl;
 
   myDesire: desireDetail;
   myId: number;

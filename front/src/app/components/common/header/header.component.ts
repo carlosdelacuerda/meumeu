@@ -3,6 +3,7 @@ import { user } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 import jwt_decode from 'jwt-decode';
 import { Observable } from 'rxjs';
+import { baseUrl } from 'src/app/services/baseUrl';
 
 
 @Component({
@@ -16,8 +17,8 @@ export class HeaderComponent implements OnInit {
   allData: user;
 
   isActive: boolean;
-
   users$: Observable<boolean>;
+  baseUrl: string = baseUrl;
   
   constructor(private userService: UsersService) { 
     this.users$ = this.userService.getLogged$();
@@ -26,6 +27,7 @@ export class HeaderComponent implements OnInit {
       const decode = jwt_decode(token);
       this.userData = decode['id'];
       this.allData = await this.userService.getById(this.userData);
+
     })
   }
 
