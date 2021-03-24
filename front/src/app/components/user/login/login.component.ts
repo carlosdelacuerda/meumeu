@@ -24,11 +24,11 @@ export class LoginComponent implements OnInit {
     const user = {username: pForm.username, password: pForm.password};
     const message = await this.userService.login(user);
     let newtoken = message.token;
-    localStorage.setItem('token' , newtoken);
-
-  
-
+    if(message.token) {
+      localStorage.setItem('token' , newtoken);
+    } 
    
+      
   }
 
 }

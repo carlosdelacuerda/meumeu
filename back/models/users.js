@@ -23,7 +23,7 @@ const create = ({ username, email, picture, password, description }) => {
 
 const getByUsername = (pUser) => {
     return new Promise((resolve, reject) => {
-        db.query('SELECT * FROM users WHERE username = ?', [pUser], (err, rows) => {
+        db.query('SELECT * FROM users WHERE username = ? or email = ?', [pUser, pUser], (err, rows) => {
             if (err) return reject(err); // Excepción ERROR
             if (rows.length === 0) return resolve(null); // No se encuentra
             resolve(rows[0]);

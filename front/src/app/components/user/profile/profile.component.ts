@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { user } from 'src/app/interfaces/user.interface';
+import jwt_decode from 'jwt-decode';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  @Input() userData: user;
+  allData: user;
 
-  ngOnInit(): void {
+  constructor(private userService: UsersService) { }
+
+  async ngOnInit() { 
+    const token = localStorage.getItem("token");
+    const decode = jwt_decode(token);
+    this.userData = decode['id'];
+
+    this.allData = await this.userService.getById(this.userData);
   }
 
 }

@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
  
 
   ngDoCheck(){
+    if (this.userData != "undefined")
     this.isActive = this.userService.getToken();
   }
 

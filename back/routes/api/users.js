@@ -53,7 +53,7 @@ router.post('/login', async (req, res) => {
     const user = await getByUsername(req.body.username);
     if (user) {
         // Compruebo si las password coinciden
-        const match = bcrypt.compareSync(req.body.password, user.password);
+        const match = bcrypt.compareSync(req.body.password , user.password);
         if (match) {
             res.json({
                 success: 'Login correcto',
