@@ -28,7 +28,9 @@ export class DetailTripComponent implements OnInit {
   myId: number;
   url: string;
   positionId: number;
-  modal;
+  modalContact;
+  modalLogin;
+  token;
 
   constructor(
     private tripService: TripService,
@@ -40,7 +42,9 @@ export class DetailTripComponent implements OnInit {
    }
 
   async ngOnInit() {   
-    this.modal = document.querySelector(".modal");
+    this.token = localStorage.getItem('token')
+    this.modalContact = document.querySelector(".modalContact");
+    this.modalLogin = document.querySelector(".modalLogin");
     this.url = window.location.href;
     const arrId = this.url.split('/');
     this.positionId = arrId.length-1;
@@ -50,11 +54,15 @@ export class DetailTripComponent implements OnInit {
   } 
 
   showModal(){
-    this.modal.style.display = "block";
+    if (this.token) {
+    this.modalContact.style.display = "block";
+    }
+    this.modalLogin.style.display = "block";
   }
 
   closeModal(){
-    this.modal.style.display = "none";
+    this.modalContact.style.display = "none";
+    this.modalLogin.style.display = "none";
   }
 
   async onSubmit(pForm) {

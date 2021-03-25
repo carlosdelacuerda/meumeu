@@ -38,6 +38,7 @@ import { MailReviveComponent } from './components/comunication/mail-revive/mail-
 import { NavMailComponent } from './components/comunication/nav-mail/nav-mail.component';
 import { InboxDetailComponent } from './components/comunication/inbox-detail/inbox-detail.component';
 import { SendDetailComponent } from './components/comunication/send-detail/send-detail.component';
+import { ConditionsComponent } from './components/public/conditions/conditions.component';
 
 
 
@@ -77,6 +78,7 @@ import { SendDetailComponent } from './components/comunication/send-detail/send-
     NavMailComponent,
     InboxDetailComponent,
     SendDetailComponent,
+    ConditionsComponent,
   ],
   imports: [
     BrowserModule,

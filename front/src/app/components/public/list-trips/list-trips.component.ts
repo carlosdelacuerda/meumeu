@@ -10,6 +10,7 @@ import { TripService } from 'src/app/services/trip.service';
 })
 export class ListTripsComponent implements OnInit {
 
+  
   @Input() arrTrips: trip[];
 
   baseUrl: string = baseUrl;

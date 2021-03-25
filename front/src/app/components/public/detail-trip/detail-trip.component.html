@@ -1,5 +1,18 @@
-
-<div class="modal">
+<div class="modal modalLogin">
+    <div class="close">
+        <img src="../../../../assets/images/close.svg" alt="close icon" (click)="closeModal()">
+    </div>
+    <div class="info">
+        <h5>Tienes que registrarte para enviar mensajes</h5>
+        <a [routerLink]='["/register"]' class="button button-primary">
+            CREAR CUENTA
+        </a>
+        <a [routerLink]='["/login"]' class="button button-primary">
+            IDENTIFICARME
+        </a>
+    </div>
+</div>
+<div class="modal modalContact">
     <div class="close">
         <img src="../../../../assets/images/close.svg" alt="close icon" (click)="closeModal()">
     </div>

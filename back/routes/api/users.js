@@ -1,10 +1,11 @@
-const { getAll, create, getByUsername, getById, deleteById, updateById } = require('../../models/users');
+const { getAll, create, getByUsername, getById, deleteById, updateById, checkUsername, checkEmail } = require('../../models/users');
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const upload = multer({ dest: 'public/images/profile' });
 const fs = require('fs');
+
 
 // Recupera todos los clientes y devuelve JSON
 router.get('/', async (req, res) => {
@@ -60,10 +61,14 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', upload.single('picture'), async (req, res) => {
-    // const userCheck = await checkUsername(req.body.username);
-    // if (userCheck != null) {
-    //     return res.json('usuario existente')
-    // } 
+    const userCheck = await checkUsername(req.body.username);
+    const emailCheck = await checkEmail(req.body.email);
+    if (userCheck != null) {
+        return res.json('errorName')
+    } else if (emailCheck != null) {
+        return res.json('errorEmail')
+    } 
+
     console.log(req.file);
     // Antes de guardar el producto en la base de datos, modificamos la imagen para situarla donde nos interesa
     const extension = '.' + req.file.mimetype.split('/')[1];

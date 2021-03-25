@@ -30,6 +30,15 @@ const checkUsername = (pUser) => {
         });
     });
 }
+const checkEmail = (pEmail) => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT * FROM users WHERE email = ?', [pEmail], (err, rows) => {
+            if (err) return reject(err); // Excepción ERROR
+            if (rows.length === 0) return resolve(null); // No se encuentra
+            resolve(rows[0]);
+        });
+    });
+}
 
 const getByUsername = (pUser) => {
     return new Promise((resolve, reject) => {
@@ -73,5 +82,5 @@ const deleteById = (pId) => {
 }
 
 module.exports = {
-    getAll, create, getByUsername, getById, updateById, deleteById, checkUsername
+    getAll, create, getByUsername, getById, updateById, deleteById, checkUsername, checkEmail
 }

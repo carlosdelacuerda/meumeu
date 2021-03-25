@@ -10,6 +10,7 @@ import { baseUrl } from 'src/app/services/baseUrl';
 })
 export class ListCapricesComponent implements OnInit {
 
+  
   baseUrl: string = baseUrl;
 
   @Input() arrCaprices: caprice[];
