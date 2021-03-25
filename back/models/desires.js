@@ -52,6 +52,8 @@ const create = ({ title, country, date, notes, image, user_id }) => {
 
 
 
+
+
 // const getById = (pId) => {
 //     return new Promise((resolve, reject) => {
 //         db.query('SELECT * FROM desires WHERE id = ?', [pId], (err, rows) => {
