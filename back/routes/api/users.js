@@ -68,7 +68,7 @@ router.post('/', upload.single('picture'), async (req, res) => {
     } else if (emailCheck != null) {
         return res.json('errorEmail')
     } 
-
+    if (req.file) {
     console.log(req.file);
     // Antes de guardar el producto en la base de datos, modificamos la imagen para situarla donde nos interesa
     const extension = '.' + req.file.mimetype.split('/')[1];
@@ -81,10 +81,13 @@ router.post('/', upload.single('picture'), async (req, res) => {
 
     // Modifico el BODY para poder incluir el nombre de la imagen en la BD
     req.body.picture = newName;
-
+    } else {
+        req.body.picture = "no-user.svg"
+    }
     try {
         req.body.password = bcrypt.hashSync(req.body.password, 10);
         const newImage = await create(req.body);
+        // envío mail
         console.log(newImage)
         res.json(newImage);
     } catch (err) {

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { error } from 'protractor';
 import { UsersService } from 'src/app/services/users.service';
 import { user } from '../../../interfaces/user.interface'
 
@@ -63,15 +62,18 @@ export class RegisterComponent implements OnInit {
     onSubmit() {
      // Creación del objeto donde incluimos todos los campos del formulario y además la imagen
       let fd = new FormData();
-      if (this.files === null) {
-        fd.append('picture', this.noPicture);
+      // if (this.files === null) {
+      //   let reader = new FileReader();
+      //   reader.readAsDataURL(new File (this.noPicture));
+      //   fd.append('picture', this.noPicture);
+      // }
+      if (this.files && this.files.length > 0) {
+        fd.append('picture', this.files[0]);
       }
-      fd.append('picture', this.files[0]);
       fd.append('username', this.formulario.value.username);
       fd.append('password', this.formulario.value.password);
       fd.append('email', this.formulario.value.email);
-      fd.append('repeatPassword', this.formulario.value.repeatPassword);
-      fd.append('checkBox', this.formulario.value.checkBox);
+    
   
       
       
