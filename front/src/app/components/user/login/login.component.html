@@ -4,20 +4,12 @@
         <div class="form-control">
             <h5>Nombre de usuario o e-mail</h5>
             <input type="text" name="username" ngModel>
-            <div class="alert">
-                <p>
-                    No existe ese usuario
-                </p>
-            </div>
+            <span class="small txt-alert m-l-5p name-fail">No se ha encontrado ese nombre</span>
         </div>
         <div class="form-control">
             <h5>Password</h5>
             <input type="password" name="password" ngModel>
-            <div class="alert">
-                <p>
-                    El password es incorrecto
-                </p>
-            </div>
+            <span class="small txt-alert m-l-5p password-fail">Password incorrecto</span>
         </div>
         <div class="form-control" style="display: none;">
             <label>
